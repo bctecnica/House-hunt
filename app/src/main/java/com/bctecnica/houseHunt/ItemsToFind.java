@@ -1,9 +1,5 @@
 package com.bctecnica.houseHunt;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.Stream;
@@ -25,21 +21,20 @@ public class ItemsToFind {
             "outdoor item 10", "outdoor item 11", "outdoor item 12",
     };
 
-    // Used to create a random item to find
-    public String getFact(int input){
-        int passed = input;
-        String item = "failed";
-        if(passed == 0) {
+    // Pulls items from the array depending on user selection of where to play
+    public String getNextItem(int input){
+        String item = "ERROR";
+        if(input == 0) {
             Random randomGenerator = new Random();
             int randomNumber = randomGenerator.nextInt(indoor.length);
             item = indoor[randomNumber];
         }
-        if(passed == 1){
+        if(input == 1){
             Random randomGenerator = new Random();
             int randomNumber = randomGenerator.nextInt(outdoor.length);
             item = outdoor[randomNumber];
         }
-        if(passed == 2){
+        if(input == 2){
             String[] both = Stream.concat(Arrays.stream(indoor), Arrays.stream(outdoor))
                     .toArray(String[]::new);
             Random randomGenerator = new Random();

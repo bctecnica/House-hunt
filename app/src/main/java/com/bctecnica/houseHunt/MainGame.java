@@ -2,15 +2,18 @@ package com.bctecnica.houseHunt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class MainGame extends AppCompatActivity {
 
-    private ItemsToFind factBook = new ItemsToFind();
+    private ItemsToFind itemsToFind = new ItemsToFind();
     private ColorWheel colorWheel = new ColorWheel();
     private TextView itemToFindView;
     private Button nextItemButton;
@@ -22,8 +25,11 @@ public class MainGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
 
-        // Sets player selection as int
+        // Sets player selection as int to pass to the findNextItem method
         passedNumber = getIntent().getIntExtra("PLAYER_SELECTION", 0);
+
+        // Hides action bar in main game activity
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // Link view elements to there corresponding java variables
         itemToFindView = findViewById(R.id.itemToFindText);
@@ -35,7 +41,7 @@ public class MainGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Sets next random item to textview and colour
-                String fact = factBook.getFact(passedNumber);
+                String fact = itemsToFind.getNextItem(passedNumber);
                 int color = colorWheel.getColor();
 
                 //updates the main text field with the random fact

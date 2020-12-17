@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">House Hunt</string>
+    <string name="bctecnica">bctecnica</string>
+    <string name="e_mail">e_mail</string>
 </resources>
