@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/whereView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="434dp"
+        android:layout_marginTop="8dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,6 +20,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/temp_inside" />
+
+    <TextView
+        android:id="@+id/wheretoHunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Where would you like to hunt:"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/whereSelector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/whereSelector"
@@ -58,6 +69,7 @@
         android:layout_marginBottom="28dp"
         android:background="#FFFFFF"
         android:text="GENERATE"
+        android:textColor="#51B46D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

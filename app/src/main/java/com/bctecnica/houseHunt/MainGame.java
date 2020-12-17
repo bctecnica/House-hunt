@@ -35,7 +35,7 @@ public class MainGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Sets next random item to textview and colour
-                String fact = factBook.getFact();
+                String fact = factBook.getFact(passedNumber);
                 int color = colorWheel.getColor();
 
                 //updates the main text field with the random fact
