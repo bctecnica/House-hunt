@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton userSelectionRadioButton;
     ImageView playAreaImage;
     Button generateButton;
-    int[] wherePictures = { R.drawable.temp_inside, R.drawable.temp_outside, R.drawable.temp_both};
+    int[] wherePictures = { R.drawable.final_inside, R.drawable.final_outside, R.drawable.final_both};
     int passIndex;
 
     @Override

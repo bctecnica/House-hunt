@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/temp_inside" />
+        app:srcCompat="@drawable/final_inside" />
 
     <TextView
         android:id="@+id/wheretoHunt"
