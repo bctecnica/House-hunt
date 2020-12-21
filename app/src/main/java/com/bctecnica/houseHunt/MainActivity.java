@@ -31,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
         playAreaImage = findViewById(R.id.whereView);
         generateButton = findViewById(R.id.generateButton);
 
-        whereToPlayRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                userSelectionRadioButton = radioGroup.findViewById(i);
-                passIndex = radioGroup.indexOfChild(userSelectionRadioButton);
-                playAreaImage.setImageResource(wherePictures[passIndex]);
-            }
+        // Changes image whe radio buttons clicked and saves the value of selection to pass through intent
+        whereToPlayRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            userSelectionRadioButton = radioGroup.findViewById(i);
+            passIndex = radioGroup.indexOfChild(userSelectionRadioButton);
+            playAreaImage.setImageResource(wherePictures[passIndex]);
         });
 
         generateButton.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    // Info icon in action bar
+
+    // E-mail icon in action bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem menuItem = menu.add("info");
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    // Opens info pane when action bar icon is clicked
+    // Opens panel to send email to bctecnica
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent i = new Intent(Intent.ACTION_SEND);

@@ -21,26 +21,27 @@ public class ItemsToFind {
             "outdoor item 10", "outdoor item 11", "outdoor item 12",
     };
 
-    // Pulls items from the array depending on user selection of where to play
+    // Combined array of both inside/outside[]
+    private String[] both = Stream.concat(Arrays.stream(indoor), Arrays.stream(outdoor))
+            .toArray(String[]::new);
+
+    // Pulls items from the correct array depending on user selection of where to play
     public String getNextItem(int input){
         String item = "ERROR";
+        Random randomGenerator = new Random();
         if(input == 0) {
-            Random randomGenerator = new Random();
             int randomNumber = randomGenerator.nextInt(indoor.length);
             item = indoor[randomNumber];
         }
         if(input == 1){
-            Random randomGenerator = new Random();
             int randomNumber = randomGenerator.nextInt(outdoor.length);
             item = outdoor[randomNumber];
         }
         if(input == 2){
-            String[] both = Stream.concat(Arrays.stream(indoor), Arrays.stream(outdoor))
-                    .toArray(String[]::new);
-            Random randomGenerator = new Random();
             int randomNumber = randomGenerator.nextInt(both.length);
             item = both[randomNumber];
         }
         return item;
     }
+
 }
