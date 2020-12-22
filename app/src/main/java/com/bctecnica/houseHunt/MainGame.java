@@ -89,7 +89,7 @@ public class MainGame extends AppCompatActivity {
         gameOverPopUp.setMessage("Time to count up each players pile and see who the winner is.");
 
         gameOverPopUp.setNegativeButton(
-                "Reset game",
+                "Play Again",
                 (dialog, id) -> finish());
 
         AlertDialog alert11 = gameOverPopUp.create();
