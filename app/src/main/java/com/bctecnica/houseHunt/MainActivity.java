@@ -3,6 +3,7 @@ package com.bctecnica.houseHunt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,8 +31,11 @@ public class MainActivity extends AppCompatActivity {
         playAreaImage = findViewById(R.id.whereView);
         generateButton = findViewById(R.id.generateButton);
 
+        MediaPlayer click = MediaPlayer.create(MainActivity.this,R.raw.button_click);
+
         // Changes image whe radio buttons clicked and saves the value of selection to pass through intent
         whereToPlayRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            click.start();
             userSelectionRadioButton = radioGroup.findViewById(i);
             passIndex = radioGroup.indexOfChild(userSelectionRadioButton);
             playAreaImage.setImageResource(wherePictures[passIndex]);
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Drop down menu to send email
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

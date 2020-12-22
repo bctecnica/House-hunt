@@ -25,61 +25,64 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/final_inside" />
 
-    <TextView
-        android:id="@+id/wheretoHunt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Where would you like to play:"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/whereView" />
+        <TextView
+            android:id="@+id/wheretoHunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Where would you like to play:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whereView" />
 
-    <RadioGroup
-        android:id="@+id/whereSelector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wheretoHunt">
+        <RadioGroup
+            android:id="@+id/whereSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wheretoHunt">
 
-        <RadioButton
-            android:id="@+id/insideRadio"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/background_light"
-            android:checked="true"
-            android:elevation="4dp"
-            android:text="              Inside"
-            android:textColor="#000000"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorLink="#FFFFFF" />
+            <RadioButton
+                android:id="@+id/insideRadio"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/background_light"
+                android:checked="true"
+                android:elevation="4dp"
+                android:text="                 Inside"
+                android:textColor="#000000"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="15sp" />
 
-        <RadioButton
-            android:id="@+id/outsideRadio"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/background_light"
-            android:elevation="4dp"
-            android:text="            Outside"
-            android:textColor="#000000" />
+            <RadioButton
+                android:id="@+id/outsideRadio"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/background_light"
+                android:elevation="4dp"
+                android:text="               Outside"
+                android:textColor="#000000"
+                android:textSize="15sp" />
 
-        <RadioButton
-            android:id="@+id/bothRadio"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:background="@android:color/background_light"
-            android:elevation="4dp"
-            android:text="               Both"
-            android:textColor="#000000" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/bothRadio"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/background_light"
+                android:elevation="4dp"
+                android:text="                  Both"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/generateButton"

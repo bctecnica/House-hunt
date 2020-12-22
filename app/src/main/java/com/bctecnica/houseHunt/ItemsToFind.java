@@ -31,15 +31,15 @@ public class ItemsToFind {
         Random randomGenerator = new Random();
         if(input == 0) {
             int randomNumber = randomGenerator.nextInt(indoor.length);
-            item = indoor[randomNumber];
+            item = "A " + indoor[randomNumber];
         }
         if(input == 1){
             int randomNumber = randomGenerator.nextInt(outdoor.length);
-            item = outdoor[randomNumber];
+            item = "A " + outdoor[randomNumber];
         }
         if(input == 2){
             int randomNumber = randomGenerator.nextInt(both.length);
-            item = both[randomNumber];
+            item = "A " + both[randomNumber];
         }
         return item;
     }
