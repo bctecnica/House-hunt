@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -38,26 +37,20 @@ public class MainActivity extends AppCompatActivity {
             playAreaImage.setImageResource(wherePictures[passIndex]);
         });
 
-        generateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainGame.class);
-                i.putExtra("PLAYER_SELECTION", passIndex);
-                startActivity(i);
-            }
+        generateButton.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), MainGame.class);
+            i.putExtra("PLAYER_SELECTION", passIndex);
+            startActivity(i);
         });
     }
 
-    // E-mail icon in action bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem menuItem = menu.add("info");
-        menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        menuItem.setIcon(R.drawable.email_icon);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    // Opens panel to send email to bctecnica
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent i = new Intent(Intent.ACTION_SEND);
