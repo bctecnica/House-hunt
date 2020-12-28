@@ -66,33 +66,33 @@ public class MainGame extends AppCompatActivity {
         });
     }
 
-    // Updates the text in the layout of main game through the rounds
+    // Updates the layout of main game through the rounds
     public void updateLayout(){
-        if(roundCount == 0){
-            nextFindTopText.setText("First up can you find..");
-            nextItemButton.setText("NEXT");
-        }
-        if(roundCount == 1){
-            nextFindTopText.setText("Next can you find..");
-        }
-        if(roundCount == 4){
-            nextFindTopText.setText("We're half way next can you find..");
-        }
-        if(roundCount == 5){
-            nextFindTopText.setText("Next can you find..");
-        }
-        if(roundCount == 9){
-            nextFindTopText.setText("Finally can you find.");
-            nextItemButton.setText("FINISH");
-        }
-        if(roundCount == 10){
-            companyLogo.setText(R.string.company_logo);
-            roundCountText.setVisibility(View.INVISIBLE);
-            nextFindTopText.setVisibility(View.INVISIBLE);
-            nextItemButton.setVisibility(View.INVISIBLE);
-            itemToFindText.setVisibility(View.INVISIBLE);
-            mainGameLayout.setBackgroundColor(Color.parseColor("#000000"));
-            endGamePopUp();
+        switch (roundCount) {
+            case 0:
+                nextFindTopText.setText("First up can you find..");
+                nextItemButton.setText("NEXT");
+                break;
+            case 1:
+            case 5:
+                nextFindTopText.setText("Next can you find..");
+                break;
+            case 4:
+                nextFindTopText.setText("you're half way next can you find..");
+                break;
+            case 9:
+                nextFindTopText.setText("Finally can you find.");
+                nextItemButton.setText("FINISH");
+                break;
+            case 10:
+                companyLogo.setText(R.string.company_logo);
+                roundCountText.setVisibility(View.INVISIBLE);
+                nextFindTopText.setVisibility(View.INVISIBLE);
+                nextItemButton.setVisibility(View.INVISIBLE);
+                itemToFindText.setVisibility(View.INVISIBLE);
+                mainGameLayout.setBackgroundColor(Color.parseColor("#000000"));
+                endGamePopUp();
+                break;
         }
         roundCount++;
     }
