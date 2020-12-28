@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         generateButton.setOnClickListener(view -> {
+            click.start();
             Intent i = new Intent(getApplicationContext(), MainGame.class);
             i.putExtra("PLAYER_SELECTION", passIndex);
             startActivity(i);
