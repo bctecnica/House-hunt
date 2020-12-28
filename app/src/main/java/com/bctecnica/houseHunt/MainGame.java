@@ -2,8 +2,10 @@ package com.bctecnica.houseHunt;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +20,9 @@ public class MainGame extends AppCompatActivity {
 
     private ItemsToFind itemsToFind = new ItemsToFind();
     private ColorWheel colorWheel = new ColorWheel();
-    private TextView itemToFindText, nextFindTopText;
+    private TextView itemToFindText, nextFindTopText, roundCountText, companyLogo;
     private Button nextItemButton;
-    private RelativeLayout mainGameLayout;
+    private ConstraintLayout mainGameLayout;
     int passedNumber;
     int roundCount;
 
@@ -36,10 +38,12 @@ public class MainGame extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         // Link view elements to there corresponding java variables
+        roundCountText = findViewById(R.id.roundCountText);
         itemToFindText = findViewById(R.id.itemToFindText);
         nextFindTopText = findViewById(R.id.nextFindText);
         nextItemButton = findViewById(R.id.nextItemButton);
         mainGameLayout = findViewById(R.id.mainGameLayout);
+        companyLogo = findViewById(R.id.companyLogo);
 
         // When next item button is clicked
         nextItemButton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +57,7 @@ public class MainGame extends AppCompatActivity {
                     String item = itemsToFind.getNextItem(passedNumber);
                     int color = colorWheel.getColor();
                     // Sets the corresponding fields
+                    roundCountText.setText("Round: "+ roundCount);
                     itemToFindText.setText(item);
                     mainGameLayout.setBackgroundColor(color);
                     nextItemButton.setTextColor(color);
@@ -64,10 +69,16 @@ public class MainGame extends AppCompatActivity {
     // Updates the text in the layout of main game through the rounds
     public void updateLayout(){
         if(roundCount == 0){
-            nextFindTopText.setText("First up can you find...");
+            nextFindTopText.setText("First up can you find..");
             nextItemButton.setText("NEXT");
         }
         if(roundCount == 1){
+            nextFindTopText.setText("Next can you find..");
+        }
+        if(roundCount == 4){
+            nextFindTopText.setText("We're half way next can you find..");
+        }
+        if(roundCount == 5){
             nextFindTopText.setText("Next can you find..");
         }
         if(roundCount == 9){
@@ -75,6 +86,12 @@ public class MainGame extends AppCompatActivity {
             nextItemButton.setText("FINISH");
         }
         if(roundCount == 10){
+            companyLogo.setText(R.string.company_logo);
+            roundCountText.setVisibility(View.INVISIBLE);
+            nextFindTopText.setVisibility(View.INVISIBLE);
+            nextItemButton.setVisibility(View.INVISIBLE);
+            itemToFindText.setVisibility(View.INVISIBLE);
+            mainGameLayout.setBackgroundColor(Color.parseColor("#000000"));
             endGamePopUp();
         }
         roundCount++;
