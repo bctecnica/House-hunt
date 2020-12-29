@@ -62,7 +62,7 @@ public class MainGame extends AppCompatActivity {
             }
         });
 
-        // Skips a round
+        // Button to skips a round
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +73,7 @@ public class MainGame extends AppCompatActivity {
         });
     }
 
+    // Used to generate each round
     public void updateGame(){
         // Gets random item and color for respective arrays
         String item = itemsToFind.getNextItem(passedNumber);
@@ -88,13 +89,13 @@ public class MainGame extends AppCompatActivity {
     public void updateLayout(){
         switch (roundCount) {
             case 0:
-                nextFindTopText.setText("First up can you find..");
+                nextFindTopText.setText("First up can you find...");
                 nextItemButton.setText("NEXT");
                 skipButton.setText("Skip");
                 break;
             case 1:
             case 5:
-                nextFindTopText.setText("Next can you find..");
+                nextFindTopText.setText("Next can you find...");
                 break;
             case 4:
                 nextFindTopText.setText(R.string.half_way);
