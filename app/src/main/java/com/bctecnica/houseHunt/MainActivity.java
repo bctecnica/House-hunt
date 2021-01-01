@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton userSelectionRadioButton;
     ImageView playAreaImage;
     Button generateButton;
-    int[] wherePictures = { R.drawable.final_inside, R.drawable.final_outside, R.drawable.final_both};
-    int passIndex;
+    int[] whereToPlayPictures = { R.drawable.final_inside, R.drawable.final_outside, R.drawable.final_both};
+    int indexToPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         whereToPlayRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
             click.start();
             userSelectionRadioButton = radioGroup.findViewById(i);
-            passIndex = radioGroup.indexOfChild(userSelectionRadioButton);
-            playAreaImage.setImageResource(wherePictures[passIndex]);
+            indexToPass = radioGroup.indexOfChild(userSelectionRadioButton);
+            playAreaImage.setImageResource(whereToPlayPictures[indexToPass]);
         });
 
         generateButton.setOnClickListener(view -> {
             click.start();
             Intent i = new Intent(getApplicationContext(), MainGame.class);
-            i.putExtra("PLAYER_SELECTION", passIndex);
+            i.putExtra("PLAYER_SELECTION", indexToPass);
             startActivity(i);
         });
     }

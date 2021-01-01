@@ -19,9 +19,9 @@ public class ColorWheel {
             "#637a91", // dark gray
             "#f092b0", // pink
             "#b7c0c7", // light grey
-            "#ffd700", // yellow
             "#990000", // blood red
-            "#808080" // grey
+            "#808080", // grey
+            "#93CB56"  // green
     };
 
     // used to create a random color picker
