@@ -106,7 +106,7 @@ public class MainGame extends AppCompatActivity {
                 nextItemButton.setVisibility(View.INVISIBLE);
                 itemToFindText.setVisibility(View.INVISIBLE);
                 skipButton.setVisibility(View.INVISIBLE);
-                mainGameLayout.setBackgroundColor(Color.parseColor("#000000"));
+                mainGameLayout.setBackgroundResource(R.drawable.end_game_background);
                 endGamePopUp();
                 break;
         }
