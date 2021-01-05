@@ -21,7 +21,7 @@ public class MainGame extends AppCompatActivity {
     private Button nextItemButton;
     private ConstraintLayout mainGameLayout;
     int passedNumber;
-    int roundCount;
+    int roundCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,34 +72,34 @@ public class MainGame extends AppCompatActivity {
     // Updates the layout of main game through the rounds
     public void updateLayout(){
         switch (roundCount) {
-            case 0:
+            case 1:
                 instructionText.setText("First up can you find...");
                 nextItemButton.setText("NEXT");
                 skipButton.setText("Skip");
                 break;
-            case 1:
-            case 5:
-            case 8:
+            case 4:
+            case 7:
+            case 9:
                 instructionText.setText("Next can you find...");
                 break;
-            case 2 :
+            case 3 :
                 instructionText.setText("You're doing great next can you find...");
                 break;
-            case 3:
+            case 2:
             case 6:
                 instructionText.setText("Ok next can you find...");
                 break;
-            case 4:
+            case 5:
                 instructionText.setText(R.string.half_way);
                 break;
-            case 7:
+            case 8:
                 instructionText.setText("You're nearly at the end now can you find..");
                 break;
-            case 9:
+            case 10:
                 instructionText.setText("Finally can you find...");
                 nextItemButton.setText("FINISH");
                 break;
-            case 10:
+            case 11:
                 companyLogo.setText(R.string.company_logo);
                 roundCountText.setVisibility(View.INVISIBLE);
                 instructionText.setVisibility(View.INVISIBLE);
