@@ -24,12 +24,10 @@ public class ColorWheel {
             "#93CB56"  // green
     };
 
-    // used to create a random color picker
+    // Used to get a random color from array then returns converted the hash to int
     public int getColor(){
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(colors.length);
-
-        // Returns an int converted for the colors array for set background to use
         int color = Color.parseColor(colors[randomNumber]);
         return color;
     }

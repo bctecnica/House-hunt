@@ -55,6 +55,7 @@
                 android:background="@android:color/background_light"
                 android:checked="true"
                 android:elevation="4dp"
+                android:soundEffectsEnabled="false"
                 android:text="                 Inside"
                 android:textColor="#000000"
                 android:textColorHighlight="#FFFFFF"
@@ -68,6 +69,7 @@
                 android:layout_margin="5dp"
                 android:background="@android:color/background_light"
                 android:elevation="4dp"
+                android:soundEffectsEnabled="false"
                 android:text="               Outside"
                 android:textColor="#000000"
                 android:textSize="15sp" />
@@ -79,6 +81,7 @@
                 android:layout_margin="5dp"
                 android:background="@android:color/background_light"
                 android:elevation="4dp"
+                android:soundEffectsEnabled="false"
                 android:text="                  Both"
                 android:textColor="#000000"
                 android:textSize="15sp" />
@@ -91,6 +94,7 @@
             android:layout_marginTop="35dp"
             android:background="#FFFFFF"
             android:elevation="4dp"
+            android:soundEffectsEnabled="false"
             android:text="GENERATE"
             android:textColor="#51B46D"
             app:layout_constraintEnd_toEndOf="parent"

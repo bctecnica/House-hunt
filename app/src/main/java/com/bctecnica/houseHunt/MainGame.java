@@ -44,37 +44,25 @@ public class MainGame extends AppCompatActivity {
         // Hides action bar in main game activity
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        // Updates the main game and moves to the next round
-        nextItemButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                click.start();
-                updateLayout();
-
-                // Creates each round using random items and color
-                if(roundCount < 11) {
-                    updateGame();
-                }
-            }
+        // Updates the main game each round using random items and colors
+        nextItemButton.setOnClickListener(view -> {
+            click.start();
+            updateGame();
+            updateLayout();
         });
 
         // Button to skips a round
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                roundCount--;
-                updateLayout();
-                updateGame();
-            }
+        skipButton.setOnClickListener(view -> {
+            roundCount--;
+            updateGame();
+            updateLayout();
         });
     }
 
-    // Used to generate each round
+    // Used to generate each round by getting a random item and color from the correct array passed in
     public void updateGame(){
-        // Gets random item and color for respective arrays
         String item = itemsToFind.getNextItem(passedNumber);
         int color = colorWheel.getColor();
-        // Sets the corresponding fields
         roundCountText.setText("Round: "+ roundCount);
         itemToFindText.setText(item);
         mainGameLayout.setBackgroundColor(color);
@@ -125,7 +113,7 @@ public class MainGame extends AppCompatActivity {
         roundCount++;
     }
 
-    // Window for when game ends at 10 rounds and resets
+    // Popup window for when game ends at 10 rounds and resets
     public void endGamePopUp() {
         AlertDialog.Builder gameOverPopUp = new AlertDialog.Builder(this);
         gameOverPopUp.setCancelable(false);
