@@ -22,7 +22,7 @@ public class ItemsToFind {
             "towel", "magazine", "pen", "pencil", "felt tip pen",
             "rubber", "glue stick", "pencil case", "wooden object", "metal object",
             "soft toy", "hard toy", "doll", "cuddly animal", "animal toy",
-            "lego", "something with wheels", "character", "controller", "thing that smells",
+            "piece of lego", "something with wheels", "character", "controller", "thing that smells",
             "toy", "something that tells the time", "magnet", "toothbrush", "toothpaste",
             "bar of soap", "hair brush", "comb", "shampoo", "bath toy",
             "object with a light", "toy car", "ring", "necklace", "box",

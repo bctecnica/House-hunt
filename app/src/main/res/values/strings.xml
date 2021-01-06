@@ -2,7 +2,9 @@
     <string name="app_name">Scavenger Hunt</string>
     <string name="bctecnica">bctecnica</string>
     <string name="e_mail">e_mail</string>
-    <string name="instructions">Players must rush to find the item called, the first player back to the announcer adds it to they\'re pile the player with most items in there pile after 10 rounds is the winner </string>
+    <string name="instructions">
+        Players must rush to find the item called, the first player back to the announcer adds it to
+        they\'re pile the player with most items in there pile after 10 rounds is the winner </string>
     <string name="company_logo">BCTecnica &#169;</string>
     <string name="half_way">You\'re half way there \nnow can you find..</string>
 </resources>

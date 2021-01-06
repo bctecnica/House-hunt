@@ -119,7 +119,7 @@ public class MainGame extends AppCompatActivity {
         gameOverPopUp.setCancelable(false);
         gameOverPopUp.setIcon(R.drawable.winner_icon);
         gameOverPopUp.setTitle("             -WELL DONE-");
-        gameOverPopUp.setMessage("Time to count up each players pile and see who the winner is.");
+        gameOverPopUp.setMessage("Time to count up each players pile and see who's the winner.");
 
         gameOverPopUp.setNegativeButton(
                 "Play Again",
