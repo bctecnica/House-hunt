@@ -73,6 +73,7 @@ public class MainGame extends AppCompatActivity {
     public void updateLayout(){
         switch (roundCount) {
             case 1:
+                itemToFindText.setTextSize(35);
                 instructionText.setText("First up can you find...");
                 nextItemButton.setText("NEXT");
                 skipButton.setText("Skip");
@@ -113,8 +114,11 @@ public class MainGame extends AppCompatActivity {
         roundCount++;
     }
 
-    // Popup window for when game ends at 10 rounds and resets
+    // Popup window with fanfare for when game ends at 10 rounds and resets
     public void endGamePopUp() {
+        MediaPlayer clapping = MediaPlayer.create(this,R.raw.clapping);
+        clapping.start();
+
         AlertDialog.Builder gameOverPopUp = new AlertDialog.Builder(this);
         gameOverPopUp.setCancelable(false);
         gameOverPopUp.setIcon(R.drawable.winner_icon);
