@@ -7,19 +7,27 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class MainGame extends AppCompatActivity {
 
     private ItemsToFind itemsToFind = new ItemsToFind();
     private ColorWheel colorWheel = new ColorWheel();
-    private TextView itemToFindText, instructionText, roundCountText, companyLogo, skipButton;
+    private TextView itemToFindText, instructionText, roundCountText, companyLogo, skipButton, countdownTimerText;
     private Button nextItemButton;
+    private ImageView countdownIcon;
     private ConstraintLayout mainGameLayout;
+    private static final long START_TIME_IN_MILLIS = 120000;
+    private long timeLeftInMillis = START_TIME_IN_MILLIS;
+    private boolean isTimerRunning;
+    private CountDownTimer countdownTimer;
     int passedNumber;
     int roundCount = 1;
 
@@ -35,6 +43,8 @@ public class MainGame extends AppCompatActivity {
         nextItemButton = findViewById(R.id.nextItemButton);
         mainGameLayout = findViewById(R.id.mainGameLayout);
         companyLogo = findViewById(R.id.companyLogo);
+        countdownIcon = findViewById(R.id.countdownIconView);
+        countdownTimerText = findViewById(R.id.countdownTimerText);
 
         MediaPlayer click = MediaPlayer.create(this,R.raw.button_click);
 
@@ -44,9 +54,45 @@ public class MainGame extends AppCompatActivity {
         // Hides action bar in main game activity
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+        // Starts 2 min timer
+        countdownIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countdownTimerText.setVisibility(View.VISIBLE);
+                countdownIcon.setVisibility(View.INVISIBLE);
+                countdownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    timeLeftInMillis = millisUntilFinished;
+                    updateCountDownText();
+                }
+                @Override
+                public void onFinish() {
+                    // play sound
+                }
+            }.start();
+                isTimerRunning = true;
+        }
+            private void updateCountDownText() {
+                int minutes = (int) (timeLeftInMillis / 1000) / 60;
+                int seconds = (int) (timeLeftInMillis / 1000) % 60;
+                String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+                countdownTimerText.setText(timeLeftFormatted);
+            }
+        });
+
+        // Reset timer
+        countdownTimerText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetTimer();
+            }
+        });
+
         // Updates the main game each round using random items and colors
         nextItemButton.setOnClickListener(view -> {
             click.start();
+            resetTimer();
             updateGame();
             updateLayout();
         });
@@ -54,6 +100,7 @@ public class MainGame extends AppCompatActivity {
         // Button to skips a round
         skipButton.setOnClickListener(view -> {
             roundCount--;
+            resetTimer();
             updateGame();
             updateLayout();
         });
@@ -73,7 +120,8 @@ public class MainGame extends AppCompatActivity {
     public void updateLayout(){
         switch (roundCount) {
             case 1:
-                itemToFindText.setTextSize(35);
+                countdownIcon.setVisibility(View.VISIBLE);
+                itemToFindText.setTextSize(40);
                 instructionText.setText("First up can you find...");
                 nextItemButton.setText("NEXT");
                 skipButton.setText("Skip");
@@ -133,5 +181,21 @@ public class MainGame extends AppCompatActivity {
         alert11.show();
     }
 
+    // Resets count but only if counter is running
+    private void resetTimer() {
+        if(isTimerRunning) {
+            timeLeftInMillis = START_TIME_IN_MILLIS;
+            countdownIcon.setVisibility(View.VISIBLE);
+            countdownTimerText.setVisibility(View.INVISIBLE);
+            countdownTimer.cancel();
+            isTimerRunning = false;
+        }
+    }
+
 }
+
+
+
+
+
 

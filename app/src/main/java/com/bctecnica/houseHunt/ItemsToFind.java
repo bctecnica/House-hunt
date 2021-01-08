@@ -11,10 +11,10 @@ public class ItemsToFind {
             "cushion", "candle", "remote", "book", "ornament",
             "bag", "disc", "photo", "cable", "sunglasses",
             "money box", "statue", "plaster", "phone/tablet", "key",
-            "white shoe", "black shoe", "colourful shoe", "plant", "coat",
+            "slipper", "black shoe", "colourful shoe", "plant", "coat",
             "hat", "scarf", "headphones", "glove", "handbag",
             "piece of paper", "toilet roll", "sticker", "spoon", "saucepan",
-            "cup", "tea towel", "bowl", "jug", "siv",
+            "cup", "tea towel", "bowl", "jug", "sieve",
             "kitchen roll", "tin foil", "bin bag", "cooking tray", "whisk",
             "chopsticks", "small plate", "roll of tape", "battery", "ball",
             "bottle", "helmet", "rolling pin", "pair of tongs", "sweet",
@@ -22,7 +22,7 @@ public class ItemsToFind {
             "towel", "magazine", "pen", "pencil", "felt tip pen",
             "rubber", "glue stick", "pencil case", "wooden object", "metal object",
             "soft toy", "hard toy", "doll", "cuddly animal", "animal toy",
-            "piece of lego", "something with wheels", "character", "controller", "thing that smells",
+            "piece of lego", "thing with wheels", "character", "controller", "thing that smells",
             "toy", "something that tells the time", "magnet", "toothbrush", "toothpaste",
             "bar of soap", "hair brush", "comb", "shampoo", "bath toy",
             "object with a light", "toy car", "ring", "necklace", "box",
@@ -39,7 +39,7 @@ public class ItemsToFind {
             "acorn", "feather", "clover", "pine cone", "branch",
             "Y-shaped twig", "stone", "heart shaped rock", "yellow flower", "white flower",
             "green leaf", "brown leaf", "blade of glass", "piece of bark", "seed",
-            "dandelion", "colourful flower", "shell", "smooth rock", "something spikey",
+            "dandelion", "coloured flower", "shell", "smooth rock", "something spikey",
             "bug", "seaweed", "pebble"
     };
 

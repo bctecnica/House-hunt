@@ -16,11 +16,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     RadioGroup whereToPlayRadioGroup;
-    RadioButton userSelectionRadioButton;
-    ImageView playAreaImage;
+    RadioButton playerSelectionRadioButton;
+    ImageView currentWhereToPlayImage;
     Button generateButton;
     int[] whereToPlayPictures = { R.drawable.final_inside, R.drawable.final_outside, R.drawable.final_both};
-    int indexToPass;
+    int playerSelectionToPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         whereToPlayRadioGroup = findViewById(R.id.whereSelector);
-        playAreaImage = findViewById(R.id.whereView);
+        currentWhereToPlayImage = findViewById(R.id.whereView);
         generateButton = findViewById(R.id.generateButton);
 
         MediaPlayer click = MediaPlayer.create(MainActivity.this,R.raw.button_click);
@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         // Changes image whe radio buttons clicked and saves the value of selection to pass through intent
         whereToPlayRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
             click.start();
-            userSelectionRadioButton = radioGroup.findViewById(i);
-            indexToPass = radioGroup.indexOfChild(userSelectionRadioButton);
-            playAreaImage.setImageResource(whereToPlayPictures[indexToPass]);
+            playerSelectionRadioButton = radioGroup.findViewById(i);
+            playerSelectionToPass = radioGroup.indexOfChild(playerSelectionRadioButton);
+            currentWhereToPlayImage.setImageResource(whereToPlayPictures[playerSelectionToPass]);
         });
 
         generateButton.setOnClickListener(view -> {
             click.start();
             Intent i = new Intent(getApplicationContext(), MainGame.class);
-            i.putExtra("PLAYER_SELECTION", indexToPass);
+            i.putExtra("PLAYER_SELECTION", playerSelectionToPass);
             startActivity(i);
         });
     }
