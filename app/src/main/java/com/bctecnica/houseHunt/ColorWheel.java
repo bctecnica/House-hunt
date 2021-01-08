@@ -9,27 +9,29 @@ public class ColorWheel {
     private String[] colors = {
             "#39add1", // light blue
             "#3079ab", // dark blue
+            "#53bbb4", // aqua
             "#c25975", // mauve
             "#e15258", // red
             "#f9845b", // orange
             "#838cc7", // lavender
             "#7d669e", // purple
-            "#53bbb4", // aqua
+            "#723DBA", // dark purple
+            "#f092b0", // pink
+            "#FFB100", // orange
             "#e0ab18", // mustard
             "#637a91", // dark gray
-            "#f092b0", // pink
             "#b7c0c7", // light grey
             "#990000", // blood red
             "#808080", // grey
-            "#93CB56"  // green
+            "#20E537", // dark green
+            "#FFBB81", // salmon
     };
 
     // Used to get a random color from array then returns converted the hash to int
     public int getColor(){
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(colors.length);
-        int color = Color.parseColor(colors[randomNumber]);
-        return color;
+        return Color.parseColor(colors[randomNumber]);
     }
 
 }

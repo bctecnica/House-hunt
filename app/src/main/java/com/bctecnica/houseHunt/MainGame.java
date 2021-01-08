@@ -73,6 +73,7 @@ public class MainGame extends AppCompatActivity {
                     ringing.start();
                 }
             }.start();
+
                 isTimerRunning = true;
         }
 
@@ -159,6 +160,7 @@ public class MainGame extends AppCompatActivity {
                 nextItemButton.setVisibility(View.INVISIBLE);
                 itemToFindText.setVisibility(View.INVISIBLE);
                 skipButton.setVisibility(View.INVISIBLE);
+                countdownIcon.setVisibility(View.INVISIBLE);
                 mainGameLayout.setBackgroundResource(R.drawable.end_game_background);
                 endGamePopUp();
                 break;
