@@ -47,14 +47,16 @@ public class MainGame extends AppCompatActivity {
         countdownTimerText = findViewById(R.id.countdownTimerText);
 
         MediaPlayer click = MediaPlayer.create(this,R.raw.button_click);
+        MediaPlayer ringing = MediaPlayer.create(this,R.raw.alarm_clock);
 
-        // Sets player selection as int to pass to the findNextItem method
-        passedNumber = getIntent().getIntExtra("PLAYER_SELECTION", 0);
 
         // Hides action bar in main game activity
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        // Starts 2 min timer
+        // Sets player selection as int to pass to the findNextItem method
+        passedNumber = getIntent().getIntExtra("PLAYER_SELECTION", 0);
+
+        // Starts 2 min timer that rings when complete
         countdownIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,11 +70,13 @@ public class MainGame extends AppCompatActivity {
                 }
                 @Override
                 public void onFinish() {
-                    // play sound
+                    ringing.start();
                 }
             }.start();
                 isTimerRunning = true;
         }
+
+            // Formats to countdown to 00:00
             private void updateCountDownText() {
                 int minutes = (int) (timeLeftInMillis / 1000) / 60;
                 int seconds = (int) (timeLeftInMillis / 1000) % 60;
@@ -81,7 +85,7 @@ public class MainGame extends AppCompatActivity {
             }
         });
 
-        // Reset timer
+        // Resets timer
         countdownTimerText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
