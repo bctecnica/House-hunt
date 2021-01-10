@@ -25,6 +25,7 @@ public class ColorWheel {
             "#808080", // grey
             "#20E537", // dark green
             "#FFBB81", // salmon
+            "#26a69a"  // teal
     };
 
     // Used to get a random color from array then returns converted the hash to int

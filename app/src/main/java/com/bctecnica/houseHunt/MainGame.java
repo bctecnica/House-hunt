@@ -3,8 +3,6 @@ package com.bctecnica.houseHunt;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Locale;
 import java.util.Objects;
 
@@ -48,7 +45,6 @@ public class MainGame extends AppCompatActivity {
 
         MediaPlayer click = MediaPlayer.create(this,R.raw.button_click);
         MediaPlayer ringing = MediaPlayer.create(this,R.raw.alarm_clock);
-
 
         // Hides action bar in main game activity
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -87,12 +83,7 @@ public class MainGame extends AppCompatActivity {
         });
 
         // Resets timer
-        countdownTimerText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resetTimer();
-            }
-        });
+        countdownTimerText.setOnClickListener(view -> resetTimer());
 
         // Updates the main game each round using random items and colors
         nextItemButton.setOnClickListener(view -> {
@@ -109,6 +100,17 @@ public class MainGame extends AppCompatActivity {
             updateGame();
             updateLayout();
         });
+    }
+
+    // Resets count but only if counter is running
+    private void resetTimer() {
+        if(isTimerRunning) {
+            timeLeftInMillis = START_TIME_IN_MILLIS;
+            countdownIcon.setVisibility(View.VISIBLE);
+            countdownTimerText.setVisibility(View.INVISIBLE);
+            countdownTimer.cancel();
+            isTimerRunning = false;
+        }
     }
 
     // Used to generate each round by getting a random item and color from the correct array passed in
@@ -141,7 +143,7 @@ public class MainGame extends AppCompatActivity {
                 break;
             case 2:
             case 6:
-                instructionText.setText("Ok next can you find...");
+                instructionText.setText("Ok now can you find...");
                 break;
             case 5:
                 instructionText.setText(R.string.half_way);
@@ -176,8 +178,9 @@ public class MainGame extends AppCompatActivity {
         AlertDialog.Builder gameOverPopUp = new AlertDialog.Builder(this);
         gameOverPopUp.setCancelable(false);
         gameOverPopUp.setIcon(R.drawable.winner_icon);
-        gameOverPopUp.setTitle("             -WELL DONE-");
-        gameOverPopUp.setMessage("Time to count up each players pile and see who's the winner.");
+        gameOverPopUp.setTitle("            -CONGRATULATIONS-");
+        gameOverPopUp.setMessage("Well done scavengers, hope you had fun. " +
+                "Time to count up each players collection and see who is the winner.");
 
         gameOverPopUp.setNegativeButton(
                 "Play Again",
@@ -185,17 +188,6 @@ public class MainGame extends AppCompatActivity {
 
         AlertDialog alert11 = gameOverPopUp.create();
         alert11.show();
-    }
-
-    // Resets count but only if counter is running
-    private void resetTimer() {
-        if(isTimerRunning) {
-            timeLeftInMillis = START_TIME_IN_MILLIS;
-            countdownIcon.setVisibility(View.VISIBLE);
-            countdownTimerText.setVisibility(View.INVISIBLE);
-            countdownTimer.cancel();
-            isTimerRunning = false;
-        }
     }
 
 }

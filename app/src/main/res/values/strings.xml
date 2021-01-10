@@ -3,11 +3,12 @@
     <string name="bctecnica">bctecnica</string>
     <string name="e_mail">e_mail</string>
     <string name="instructions">
-        Welcome, the aim is for players to scavenge as many items as possible to build the largest
-        collection of loot before the end of the 10 rounds.\n\n
-        Grownups must read the items popping up on their screen and keep a tally of the players
-        points. A two minute timer can be added to increase difficulty.\n\n
-        Good luck and happy scavenging!!!
+        Welcome to Scavenger Hunt, the aim of the game is for each player to scavenge as many items
+        as possible to build their collection.\n\n
+        Grownups must read the item on their screen each round then players must dash to find the
+        item, the first player back adds it to their collection the player with the most items after
+        10 rounds is crowned the winner. Tap the timer icon for an extra challenge.\n\n
+        Good luck scavengers!!!
     </string>
     <string name="company_logo">BCTecnica &#169;</string>
     <string name="half_way">You\'re half way there \nnow can you find..</string>

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"bctecnica@gmail.com"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "House hunt app");
+        i.putExtra(Intent.EXTRA_SUBJECT, "Scavenger Hunt app");
         try {
             startActivity(Intent.createChooser(i, "Send e-mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
