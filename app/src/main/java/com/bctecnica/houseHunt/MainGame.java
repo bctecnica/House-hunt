@@ -17,7 +17,7 @@ public class MainGame extends AppCompatActivity {
 
     private ItemsToFind itemsToFind = new ItemsToFind();
     private ColorWheel colorWheel = new ColorWheel();
-    private TextView itemToFindText, instructionText, roundCountText, companyLogo, skipButton, countdownTimerText;
+    private TextView itemToFindText, instructionText, roundCountText, companyLogo, skipButton, countdownTimerText, howToText;
     private Button nextItemButton;
     private ImageView countdownIcon;
     private ConstraintLayout mainGameLayout;
@@ -33,6 +33,7 @@ public class MainGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
 
+        howToText = findViewById(R.id.howToText);
         skipButton = findViewById(R.id.skipButton);
         roundCountText = findViewById(R.id.roundCountText);
         itemToFindText = findViewById(R.id.itemToFindText);
@@ -127,8 +128,9 @@ public class MainGame extends AppCompatActivity {
     public void updateLayout(){
         switch (roundCount) {
             case 1:
+                howToText.setVisibility(View.INVISIBLE);
                 countdownIcon.setVisibility(View.VISIBLE);
-                itemToFindText.setTextSize(40);
+                itemToFindText.setTextSize(39);
                 instructionText.setText("First up can you find...");
                 nextItemButton.setText("NEXT");
                 skipButton.setText("Skip");

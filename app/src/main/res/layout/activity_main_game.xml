@@ -5,6 +5,7 @@
     android:id="@+id/mainGameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:keepScreenOn="true"
     android:background="#51b46d"
     android:padding="10dp"
     tools:context=".MainActivity">
@@ -46,15 +47,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roundCountText" />
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/nextItemButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/howToText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:shadowColor="#000"
+            android:shadowDx="-3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/instructions"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+    </ScrollView>
+
     <TextView
         android:id="@+id/nextFindText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="How to play.."
+        android:text=""
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@+id/itemToFindText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,7 +96,7 @@
         android:shadowDx="-3"
         android:shadowDy="3"
         android:shadowRadius="3"
-        android:text="@string/instructions"
+        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
