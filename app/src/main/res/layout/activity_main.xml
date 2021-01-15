@@ -11,19 +11,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/whereView"
-        android:layout_width="0dp"
-        android:layout_height="434dp"
-        android:layout_marginTop="8dp"
-        android:adjustViewBounds="true"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/final_inside" />
+        <ImageView
+            android:id="@+id/whereView"
+            android:layout_width="0dp"
+            android:layout_height="420dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/final_inside" />
 
         <TextView
             android:id="@+id/wheretoHunt"

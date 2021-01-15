@@ -51,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/nextItemButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
             android:shadowRadius="3"
             android:text="@string/instructions"
             android:textColor="#FFFFFF"
-            android:textSize="25sp" />
+            android:textSize="25dp" />
     </ScrollView>
 
     <TextView
@@ -78,9 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text=""
+        tools:text="next find"
         android:textColor="#FFFFFF"
-        android:textSize="29sp"
+        android:textSize="29dp"
         app:layout_constraintBottom_toTopOf="@+id/itemToFindText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -89,6 +90,7 @@
         android:id="@+id/itemToFindText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -96,13 +98,13 @@
         android:shadowDx="-3"
         android:shadowDy="3"
         android:shadowRadius="3"
-        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="item to find" />
 
     <Button
         android:id="@+id/nextItemButton"
