@@ -33,7 +33,7 @@ public class ItemsToFind {
             "A shiny object", "Something gold", "Something purple", "Something animal shaped", "Something pink",
             "Something with buttons on it", "A round object", "A tissue", "A letter", "A pair of glasses",
             "Something made of rubber", "A coin", "A stuffed toy", "A music box", "A hanger",
-            "Something used foe exercise"
+            "Something used for exercise"
     };
 
     private String[] outdoor = {
