@@ -33,7 +33,9 @@ public class ItemsToFind {
             "A shiny object", "Something gold", "Something purple", "Something animal shaped", "Something pink",
             "Something with buttons on it", "A round object", "A tissue", "A letter", "A pair of glasses",
             "Something made of rubber", "A coin", "A stuffed toy", "A music box", "A hanger",
-            "Something used for exercise"
+            "Something used for exercise", "A crayon", "A pair of glasses", "Something clear", "Something bouncy",
+            "Something loud", "Something rough", "Something cold", "Something warm", "Something with letters on it",
+            "Something with numbers on it"
     };
 
     private String[] outdoor = {
@@ -41,7 +43,8 @@ public class ItemsToFind {
             "A Y-shaped twig", "A stone", "A heart shaped rock", "A yellow flower", "A white flower",
             "A green leaf", "A brown leaf", "A blade of glass", "A piece of bark", "A seed",
             "A dandelion", "A coloured flower", "A shell", "A smooth rock", "something spiky",
-            "A bug", "Some seaweed", "A pebble", "Something small", "Something you bought with you"
+            "A bug", "Some seaweed", "A pebble", "Something small", "Something you bought with you",
+            "A feather"
     };
 
     // Combined array of both inside/outside[]
